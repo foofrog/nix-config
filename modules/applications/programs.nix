@@ -22,7 +22,7 @@
       lfs.enable = true;
     };
 
-    programs.gnupg.agent = {
+    gnupg.agent = {
       enable = true;
       pinentryPackage = pkgs.pinentry-gnome3;
       enableSSHSupport = true;
