@@ -14,12 +14,12 @@
       noto-fonts-emoji
       noto-fonts-extra
       
-      # https://github.com/NixOS/nixpkgs/blob/nixos-24.05/pkgs/data/fonts/nerdfonts/shas.nix
+      # Ref: https://github.com/NixOS/nixpkgs/blob/nixos-24.05/pkgs/data/fonts/nerdfonts/shas.nix
       (nerdfonts.override {
         fonts = [
           "NerdFontsSymbolsOnly"
-          
-          "JetBrainsMono"
+          "0xProto"
+          # "JetBrainsMono"
           # "FireCode"
           # "Iosevka"
         ];
@@ -34,7 +34,7 @@
     fontconfig.defaultFonts = {
       serif = ["Noto Serif" "Noto Serif CJK JP" "Noto Color Emoji"];
       sansSerif = ["Noto Sans" "Noto Sans CJK JP" "Noto Color Emoji"];
-      monospace = ["JetBrainsMono Nerd Font" "Noto Color Emoji"];
+      monospace = ["0xProto Nerd Font" "Noto Color Emoji"];
       emoji = ["Noto Color Emoji"];
     };
   };
