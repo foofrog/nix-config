@@ -26,11 +26,15 @@
 
           home-manager.nixosModules.home-manager
           {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-
-            home-manager.users.foo = import ./hosts/foobar/userspace.nix;
-          }
+            
+            home-manager = {
+              useGlobalPkgs = true;
+              useUserPackages = true;
+              
+              users.foo = import ./hosts/foobar/userspace.nix;
+            };
+          
+          } 
         ];
       };
     };
