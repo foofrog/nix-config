@@ -31,33 +31,40 @@
       };
     };
 
-    programs.fish = {
-      enable = true;
-      shellAliases = {
-        ".." = "cd ..";
-        "..." = "cd ../..";
-        "...." = "cd ../../..";
-        "....." = "cd ../../../..";
+    programs = {
+      fish = {
+        enable = true;
+        
+        shellAliases = {
+          # Alias lengthy commands
+          ".." = "cd ..";
+          "..." = "cd ../..";
+          "...." = "cd ../../..";
+          "....." = "cd ../../../..";
+          
+          "jctl" = "journalctl -p 3 -xb";
+          
+          # Alias these coreutils with better alternatives
+          "ls" = "eza -al --color=always --group-directories-first";
+          "cat" = "bat --style header --style snip --style changes --style header";
 
-        "ls" = "eza -al --color=always --group-directories-first";
-        "cat" = "bat --style header --style snip --style changes --style header";
-
-        "jctl" = "journalctl -p 3 -xb";
+        };
+        
+        interactiveShellInit = ''
+          set fish_greeting
+        '';
       };
-      interactiveShellInit = ''
-        set fish_greeting
-      '';
-    };
 
-    programs.starship = {
-      enable = true;
-      enableFishIntegration = true;
-    };
+      starship = {
+        enable = true;
+        enableFishIntegration = true;
+      };
 
-    programs.git = {
-      enable = true;
-      userName = "Foo the Frog";
-      userEmail = "mountfooji@proton.me";
+      git = {
+        enable = true;
+        userName = "Foo the Frog";
+        userEmail = "mountfooji@proton.me";
+      };
     };
 
     # Let `home-manager` install and manage itself
