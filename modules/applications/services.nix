@@ -1,4 +1,4 @@
-{ ... }: 
+_: 
 
 {
 
@@ -10,6 +10,6 @@
 
     # Necessary for GnuPG to work correctly
     pcscd.enable = true;
-  }
+  };
 
 }
