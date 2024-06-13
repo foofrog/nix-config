@@ -1,7 +1,4 @@
-{ pkgs, ... }: 
-
-{
-  
+{pkgs, ...}: {
   fonts = {
     # use fonts specified by user rather than default ones
     enableDefaultPackages = false;
@@ -13,7 +10,7 @@
       noto-fonts-cjk-serif
       noto-fonts-emoji
       noto-fonts-extra
-      
+
       # Ref: https://github.com/NixOS/nixpkgs/blob/nixos-24.05/pkgs/data/fonts/nerdfonts/shas.nix
       (nerdfonts.override {
         fonts = [
@@ -38,5 +35,4 @@
       emoji = ["Noto Color Emoji"];
     };
   };
-
 }

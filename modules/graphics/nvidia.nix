@@ -1,6 +1,8 @@
-{ config, pkgs, ... }: 
-
 {
+  config,
+  pkgs,
+  ...
+}: {
   # Load Nvidia driver (works for both X and Wayland)
   services.xserver.videoDrivers = ["nvidia"];
 
@@ -13,11 +15,12 @@
     package = config.boot.kernelPackages.nvidiaPackages.latest;
     modesetting.enable = true;
 
-    powerManagement = { # Currently experimental
+    powerManagement = {
+      # Currently experimental
       enable = false;
       finegrained = false;
     };
-    
+
     nvidiaSettings = true; # For `nvidia-settings` command
     open = false;
     nvidiaPersistenced = true;
@@ -39,7 +42,7 @@
     VDPAU_DRIVER = "va_gl";
     __GLX_VENDOR_LIBRARY_NAME = "nvidia";
   };
-  
+
   hardware.opengl.extraPackages = with pkgs; [
     vaapiVdpau
     nvidia-vaapi-driver

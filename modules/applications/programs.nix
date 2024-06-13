@@ -1,10 +1,7 @@
-{ pkgs, ... }:
-
-{
-
+{pkgs, ...}: {
   programs = {
     dconf.enable = true;
-    
+
     fish = {
       enable = true;
       useBabelfish = true;
@@ -32,5 +29,4 @@
       enable = true;
     };
   };
-
 }

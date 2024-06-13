@@ -1,7 +1,4 @@
-_: 
-
-{
-
+_: {
   # Set the local Time Zone
   time.timeZone = "Asia/Dhaka";
 
@@ -13,5 +10,4 @@ _:
       "ja_JP.UTF-8/UTF-8"
     ];
   };
-
 }

@@ -1,5 +1,4 @@
 {
-
   description = "Foo the Frog's NixOS and Home Manager configurations";
 
   inputs = {
@@ -13,11 +12,14 @@
       This avoids issues caused by different versions of packages
       */
       inputs.nixpkgs.follows = "nixpkgs"; # The `follows` keyword is used for inheritance
-    
     };
   };
 
-  outputs = inputs@{ nixpkgs, home-manager, ... }: {
+  outputs = inputs @ {
+    nixpkgs,
+    home-manager,
+    ...
+  }: {
     nixosConfigurations = {
       foobar = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
@@ -26,18 +28,15 @@
 
           home-manager.nixosModules.home-manager
           {
-            
             home-manager = {
               useGlobalPkgs = true;
               useUserPackages = true;
-              
+
               users.foo = import ./hosts/foobar/userspace.nix;
             };
-          
-          } 
+          }
         ];
       };
     };
   };
-
 }

@@ -1,8 +1,5 @@
 # ToDo: Split `./programs.nix` into files under `./programs` for program-specific configurations respectively
-{ pkgs, ... }:
-
-{
-  
+{pkgs, ...}: {
   home-manager.users.foo = {
     gtk = {
       enable = true;
@@ -34,22 +31,21 @@
     programs = {
       fish = {
         enable = true;
-        
+
         shellAliases = {
           # Alias lengthy commands
           ".." = "cd ..";
           "..." = "cd ../..";
           "...." = "cd ../../..";
           "....." = "cd ../../../..";
-          
+
           "jctl" = "journalctl -p 3 -xb";
-          
+
           # Alias these coreutils with better alternatives
           "ls" = "eza -al --color=always --group-directories-first";
           "cat" = "bat --style header --style snip --style changes --style header";
-
         };
-        
+
         interactiveShellInit = ''
           set fish_greeting
         '';
@@ -70,5 +66,4 @@
     # Let `home-manager` install and manage itself
     programs.home-manager.enable = true;
   };
-
 }

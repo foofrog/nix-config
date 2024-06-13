@@ -1,7 +1,4 @@
-{ pkgs, ... }:
-
-{
-
+{pkgs, ...}: {
   users.users.root = {
     home = /root;
     /*
@@ -11,5 +8,4 @@
     initialPassword = "GOD"; # to change this, use `passwd` command
     shell = pkgs.fish;
   };
-
 }

@@ -1,7 +1,9 @@
-{ pkgs, lib, config, ... }: 
-
 {
-
+  pkgs,
+  lib,
+  config,
+  ...
+}: {
   options = {
     moduleTablet.enable = lib.mkEnableOption "Enable tablet module";
   };
@@ -10,10 +12,9 @@
       # Enable driver for Wacom CTL-472
       enable = true;
       daemon.enable = true;
-    
-      # Supported tablets: https://opentabletdriver.net/Tablets    
-      package = pkgs.opentabletdriver; 
+
+      # Supported tablets: https://opentabletdriver.net/Tablets
+      package = pkgs.opentabletdriver;
     };
   };
-
 }

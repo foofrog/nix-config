@@ -1,11 +1,8 @@
-_:
-
-{
-
+_: {
   networking = {
     useDHCP = false;
     # ToDo: Autogenerate hostname based on the respective host
-    hostName = ""; 
+    hostName = "";
 
     networkmanager = {
       enable = true;
@@ -19,11 +16,11 @@ _:
     };
 
     # Define Public DNS Servers
-    nameservers = [    
+    nameservers = [
       # Cloudflare
       "1.1.1.1"
       "1.0.0.1"
-      # Quad9 
+      # Quad9
       "9.9.9.9"
       "149.112.112.112"
       # Google
@@ -34,5 +31,4 @@ _:
       "94.140.15.15"
     ];
   };
-
 }

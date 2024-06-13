@@ -1,7 +1,4 @@
-{ pkgs, ... }:
-
-{
-  
+{pkgs, ...}: {
   /*
   Removing a user does not remove their profile
   Ref: https://github.com/NixOS/nix/issues/4419>
@@ -19,8 +16,9 @@
     uid = 1000;
 
     # Set the groups this user will be associated with
-    extraGroups = [ # to see available group(s) use `cut -d: -f1 /etc/group` command
-      "wheel"       # to see member(s) of a particular group, use `getent group <group>` commmand
+    extraGroups = [
+      # to see available group(s) use `cut -d: -f1 /etc/group` command
+      "wheel" # to see member(s) of a particular group, use `getent group <group>` commmand
       "disk"
       "audio"
       "video"
@@ -40,5 +38,4 @@
   };
 
   environment.shells = [pkgs.fish];
-
 }

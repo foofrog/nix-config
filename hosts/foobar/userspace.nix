@@ -1,6 +1,4 @@
-{ ... }:
-
-{
+{...}: {
   imports = [
     ../../modules/users/foo/user.nix
     ../../modules/users/foo/home-depot/packages.nix
@@ -14,5 +12,4 @@
   It's perfectly OK and recommended to leave it unchanged even after updating Home Manager
   */
   home.stateVersion = "24.05";
-
 }

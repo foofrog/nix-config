@@ -1,9 +1,5 @@
-{ pkgs, ... }:
-
-{
-  
+{pkgs, ...}: {
   home.packages = with pkgs; [
-
     bat
     eza
     skim
@@ -28,7 +24,7 @@
 
     # UI/UX
     niri
-    
+
     jetbrains-mono
     noto-fonts
     noto-fonts-cjk-sans
@@ -42,7 +38,5 @@
     cowsat
     figlet
     lolcat
-
   ];
-
 }
