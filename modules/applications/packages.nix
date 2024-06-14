@@ -3,9 +3,9 @@
   nixpkgs.config.allowUnfree = true;
 
   # List packages installed in system profile
+  # NOTE: To search, run: `nix search nixpkgs <package>` command
   environment.systemPackages = with pkgs; [
-    # To search, run: `nix search <package>` command
-    #ToDo: Add small descriptions for each packages as comments with basic refactoring
+    # TODO: Add a small comment description for each package in the list
     macchina
     helix
 

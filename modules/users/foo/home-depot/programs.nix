@@ -1,4 +1,4 @@
-# ToDo: Split `./programs.nix` into files under `./programs` for program-specific configurations respectively
+# TODO: Split `./programs.nix` into files under `./programs` directory for program-specific configurations
 {pkgs, ...}: {
   home-manager.users.foo = {
     gtk = {

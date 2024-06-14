@@ -16,12 +16,12 @@
     modesetting.enable = true;
 
     powerManagement = {
-      # Currently experimental
+      # NOTE: Currently experimental
       enable = false;
       finegrained = false;
     };
 
-    nvidiaSettings = true; # For `nvidia-settings` command
+    nvidiaSettings = true; # NOTE: It enables the `nvidia-settings` command
     open = false;
     nvidiaPersistenced = true;
 

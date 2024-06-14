@@ -1,13 +1,13 @@
-_: {
+https://nixos.wiki/wiki/Wpa_supplicant_: {
   networking = {
     useDHCP = false;
-    # ToDo: Autogenerate hostname based on the respective host
+    # TODO: Implement functionality for generating hostname automatically based on the current host
     hostName = "";
 
     networkmanager = {
       enable = true;
-      # Enable wireless support via wpa_supplicant
-      # Ref: https://nixos.wiki/wiki/Wpa_supplicant
+      # Enable wireless support via `wpa_supplicant`
+      # INFO: https://nixos.wiki/wiki/Wpa_supplicant
       # wireless.enable = true;
 
       # Configure network proxy if necessary

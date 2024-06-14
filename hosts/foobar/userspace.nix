@@ -6,10 +6,12 @@
   ];
 
   /*
-  Here,
-  The value is the Home Manager release version that was installed initially
-  This helps avoid breakage when a new Home Manager release introduces backwards incompatible changes
-  It's perfectly OK and recommended to leave it unchanged even after updating Home Manager
+  INFO:
+  The value of `home.stateVersion` is the Home Manager release version installed initially for this system
+  This is required to help avoid breakage when a new Home Manager release introduces backwards incompatible changes
+  
+  NOTE:
+  It is perfectly OK and recommended to leave it unchanged even after a Home Manager update
   */
   home.stateVersion = "24.05";
 }

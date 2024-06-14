@@ -5,7 +5,7 @@
     "System Operators love to use `GOD`, it's a whole male ego thing."
       - Cereal Killer, Hackers (1995)
     */
-    initialPassword = "GOD"; # to change this, use `passwd` command
+    initialPassword = "GOD"; # NOTE: Use `passwd` command to change this
     shell = pkgs.fish;
   };
 }

@@ -1,7 +1,7 @@
 {pkgs, ...}: {
   /*
-  Removing a user does not remove their profile
-  Ref: https://github.com/NixOS/nix/issues/4419>
+  NOTE: Removing a user does not remove their profile
+  INFO: https://github.com/NixOS/nix/issues/4419
   */
   users.users.foo = {
     description = "User named foo";
@@ -17,8 +17,12 @@
 
     # Set the groups this user will be associated with
     extraGroups = [
-      # to see available group(s) use `cut -d: -f1 /etc/group` command
-      "wheel" # to see member(s) of a particular group, use `getent group <group>` commmand
+      /*
+      NOTE:
+      To see available group(s) use `cut -d: -f1 /etc/group` command
+      To see member(s) of a particular group, use `getent group <group>` commmand
+      */
+      "wheel"
       "disk"
       "audio"
       "video"

@@ -13,7 +13,7 @@
       };
     };
 
-    # Ref: https://nixos.wiki/wiki/Git
+    # INFO: https://nixos.wiki/wiki/Git
     git = {
       enable = true;
       lfs.enable = true;

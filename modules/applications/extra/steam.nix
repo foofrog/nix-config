@@ -6,10 +6,12 @@
       gamescopeSession.enable = true;
     };
 
-    gamemode.enable = true; # Temporary optimizations applies to the OS in-game, improving performance
+    # INFO: It applies temporary optimizations applies to the OS in-game, improving performance
+    gamemode.enable = true;
   };
 
   /*
+  NOTE:
   Prepend `mangohud` in launch options within Steam client's General settings as `mangohud %command%`
   to access its capabilities in-game. Same goes for other such programs.
   */

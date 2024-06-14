@@ -7,6 +7,6 @@ _: {
     hsphfpd.enable = false; # is not explictly required if PulseAudio is enabled
   };
 
-  # Enable `blueman` a full featured bluetooth manager and with GUI using the `blueman-manager` command
+  # Enable `blueman` for a full featured bluetooth manager including a GUI
   services.blueman.enable = true;
 }
