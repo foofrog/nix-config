@@ -5,7 +5,7 @@ _: {
     udisks2.enable = true;
     devmon.enable = true;
 
-    # NOTE: Necessary for GnuPG to work correctly
+    # INFO: Necessary for GnuPG to work correctly
     pcscd.enable = true;
   };
 }

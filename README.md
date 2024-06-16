@@ -1,18 +1,23 @@
 <div align="center">
-  <img src="hexagons/caped-frogs.png" alt="Caped frogs in hexagon, a parody of the Nix & NixOS logo" widdth="200" height="200">
+  <img src="hexagons/caped-frogs.png" alt="Caped frogs in hexagon, a parody of the Nix & NixOS logo" width="200" height="200">
 </div>
 
-# UNDER CONSTRUCTION!
+# Foo's Nix & NixOS Configuration
 
-> [!CAUTION]
-> This repository contains my configuration for NixOS system set up with Home Manager and Flakes, but as of now, it is unfortunately incomplete. Another thing to note is that **this is NOT the configuration I'm currently using**. My personal configuration has a different directory structure and a chaotic organization while configured a bit differently than this one. Thus, it has NOT been tested yet and might contain errors. I plan to swap this with my local setup, once this configuration's looking fairly good.
+> [!IMPORTANT]
+> This repository contains my NixOS setup with Home Manager and Flakes. While it isn't fully modular yet, it is mostly functional and **Just Works**. I plan to eventually develop it to a fully modular system and avoid unnecessary complexity to maintain readability in the codebase.
 >
-> Feel free to use it as reference (at your own risk) or additionally for testing. Consider making an issue if you find anything out of place or submit a pull request for fixes/improvements.
+> Feel free to use it as reference for your own configurations.
+> 
+> Albeit the setup isn't perfect, I hope it can provide some useful insights as I add informational comments wherever possible.
+
+**Consider creating an issue addressing a problem or suggestions for improvement; otherwise, feel free to submit a pull request.**
 
 ## Directory structure (at a glance)
 
 ```
 .
+├── flake.lock
 ├── flake.nix
 ├── hosts
 │   └── foobar
@@ -21,17 +26,20 @@
 │       └── userspace.nix
 └── modules
     ├── applications
-    │   ├── extra
-    │   │   └── steam.nix
     │   ├── packages.nix
+    │   ├── programs
+    │   │   ├── opengl.nix
+    │   │   └── steam.nix
     │   ├── programs.nix
     │   └── services.nix
     ├── bootloader.nix
     ├── fonts.nix
     ├── graphics
     │   ├── amd.nix
-    │   └── nvidia.nix
+    │   ├── nvidia.nix
+    │   └── opengl.nix
     ├── internet.nix
+    ├── kernel.nix
     ├── localization.nix
     ├── peripherals
     │   ├── audio.nix
@@ -47,13 +55,14 @@
         └── root.nix
 ```
 
-There are no `default.nix` files or `imports.nix` for imports, rather all OS and Home Manager modules are imported within `/hosts/foobar/systemwide.nix` and `/hosts/foobar/userspace.nix` respectively. These two files are intended (albeit not implemented yet, but ideally) to be used as module switches or toggles if you will, for my modules at `/modules`. `/modules/users/foo/home-depot/` directory serves as the deposit for the user's home configurations, handled by Home Manager.
+Currently, all OS and Home Manager modules are imported within `/hosts/foobar/systemwide.nix` and `/hosts/foobar/userspace.nix` explicitly. These two files are ideally intended to be used as module switches or toggles if you will, for `/modules`. `/modules/users/foo/home-depot/` directory serves as a deposit for the user's home configurations managed by Home Manager.
 
-### Lastly,
+## Acknowledgements
 
-I thank [TanvirOnGH](https://github.com/TanvirOnGH) for providing invaluable guidance that helped me make the hop from Arch (btw) to NixOS.
-Despite initial hesitations, I'm happy I made the switch. Nix and NixOS differs from traditional distributions and thus has a bit of learning curve. However, staying ignorant of better alternatives is stupid and slows down progress in the long run. It's essential to step out the comfort zone, and embrace the coming hits of changes with open arms.
+Nix and NixOS differs from traditional distributions and thus has a learning curve. One has to step out of their comfort zone but if able to learn, it's greatly benefiting. Same philosophy can apply for everything else in life.
 
-[Tanvir's own repository](https://github.com/TanvirOnGH/nix-config) for NixOS setup has been immensely helpful in creating mine. Furthermore, [Krey's `nix-config`](https://github.com/Kreyren/nixos-config), [Fufezan](https://github.com/fufexan/dotfiles) and [Ryan Yin's](https://github.com/ryan4yin/nix-config) repositories were indispensable as learning sources and reference.
+With that said, I'd like to thank:
+- [Tanvir](https://github.com/TanvirOnGH), his invaluable guidance enabled me to make the hop to Nix & NixOS (from Arch, btw) and to come up with an initial setup. [His own Nix & NixOS ](https://github.com/TanvirOnGH/nix-config) configuration has been incredibly helpful in creating mine.
+- [Krey](https://github.com/Kreyren/nixos-config), [Fufezan](https://github.com/fufexan/dotfiles), and [Ryan Yin](https://github.com/ryan4yin/nix-config) for their repositories, which were indispensable sources of learning and reference.
+- [NixOS Discourse](https://discourse.nixos.org/), official NixOS community forum that helped me debug hours of pure pain.
 
-A great resource is the unofficial [NixOS and Flakes Book](https://nixos-and-flakes.thiscute.world/introduction/).

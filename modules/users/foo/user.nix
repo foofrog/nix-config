@@ -38,8 +38,6 @@
   # };
 
   users = {
-    motd = "Don't Panic.";
+    motd = "Don't Panic!";
   };
-
-  environment.shells = [pkgs.fish];
 }

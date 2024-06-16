@@ -25,6 +25,11 @@ Prefer `nix <commmand>` command rather than `nix-<something>` commmands if flake
       */
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    niri = {
+      url = github:YaLTeR/niri;
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = inputs @ {
@@ -37,8 +42,12 @@ Prefer `nix <commmand>` command rather than `nix-<something>` commmands if flake
         system = "x86_64-linux";
         modules = [
           ./hosts/foobar/systemwide.nix
-
-          # Deploy Home Manager configuration automatically when running `nixos-switch rebuild` command
+          
+          /*
+          INFO:
+          Including Home Manager as a module automatically deploys it during rebuild
+          Thus removing the need to rebuild Home Manager config seperately
+          */
           home-manager.nixosModules.home-manager
           {
             home-manager = {

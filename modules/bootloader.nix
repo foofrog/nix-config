@@ -1,7 +1,9 @@
 {lib, ...}: {
   boot.loader.systemd-boot = {
+    enable = true;
+
     # Limit the number of generations that show up at boot entries
-    configurationLimit = lib.mkDefault 5;
+    configurationLimit = lib.mkDefault 10;
 
     /*
     WARN:
@@ -11,7 +13,7 @@
     editor = false;
 
     # Set the highest resolution available for boot console
-    consoleMode = lib.mkDefault "max";
+    # consoleMode = lib.mkDefault "max";
   };
 
   # Enable to allow the bootloader to modify EFI variables

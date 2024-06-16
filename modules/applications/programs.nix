@@ -21,12 +21,8 @@
 
     gnupg.agent = {
       enable = true;
-      pinentryPackage = pkgs.pinentry-gnome3;
       enableSSHSupport = true;
-    };
-
-    helix = {
-      enable = true;
+      pinentryPackage = pkgs.pinentry-curses;
     };
   };
 }

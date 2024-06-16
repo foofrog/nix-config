@@ -1,10 +1,16 @@
 {pkgs, ...}: {
   home.packages = with pkgs; [
+    kitty
+
     bat
+    bottom
     eza
+    fuzzel
     skim
     xplr
     zoxide
+
+    firefox
 
     # Diagnostic
     macchina
@@ -19,11 +25,9 @@
     pigz
     rar
 
-    # Development
-    zulu
-
     # UI/UX
     niri
+    swww
 
     jetbrains-mono
     noto-fonts
@@ -35,7 +39,7 @@
     asciiquarium
     cmatrix
     cbonsai
-    cowsat
+    cowsay
     figlet
     lolcat
   ];

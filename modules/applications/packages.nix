@@ -8,6 +8,7 @@
     # TODO: Add a small comment description for each package in the list
     macchina
     helix
+    brillo
 
     strace
     ltrace
@@ -29,6 +30,8 @@
     dmidecode # to read information about hardware from BIOS according to the SMBIOS/DMI standard
     parted
     gparted
+
+    spacedrive
   ];
 
   # Set the default editor

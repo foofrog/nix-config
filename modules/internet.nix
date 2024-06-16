@@ -1,8 +1,8 @@
-https://nixos.wiki/wiki/Wpa_supplicant_: {
+_: {
   networking = {
     useDHCP = false;
     # TODO: Implement functionality for generating hostname automatically based on the current host
-    hostName = "";
+    hostName = "foobar";
 
     networkmanager = {
       enable = true;

@@ -10,7 +10,6 @@
       noto-fonts-emoji
       noto-fonts-extra
 
-      
       # INFO: https://github.com/NixOS/nixpkgs/blob/nixos-24.05/pkgs/data/fonts/nerdfonts/shas.nix
       (nerdfonts.override {
         fonts = [
@@ -24,11 +23,15 @@
     ];
 
     # NOTE: Noto Color Emoji is explicitly specified to potentially override emojis from other fonts
-    fontconfig.defaultFonts = {
-      serif = ["Noto Serif" "Noto Serif CJK JP" "Noto Color Emoji"];
-      sansSerif = ["Noto Sans" "Noto Sans CJK JP" "Noto Color Emoji"];
-      monospace = ["0xProto Nerd Font" "Noto Color Emoji"];
-      emoji = ["Noto Color Emoji"];
+    fontconfig = {
+      enable = true;
+
+      defaultFonts = {
+        serif = ["Noto Serif" "Noto Serif CJK JP" "Noto Color Emoji"];
+        sansSerif = ["Noto Sans" "Noto Sans CJK JP" "Noto Color Emoji"];
+        monospace = ["0xProto Nerd Font" "Noto Color Emoji"];
+        emoji = ["Noto Color Emoji"];
+      };
     };
   };
 }
