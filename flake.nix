@@ -42,7 +42,7 @@ Prefer `nix <commmand>` command rather than `nix-<something>` commmands if flake
         system = "x86_64-linux";
         modules = [
           ./hosts/foobar/systemwide.nix
-          
+
           /*
           INFO:
           Including Home Manager as a module automatically deploys it during rebuild

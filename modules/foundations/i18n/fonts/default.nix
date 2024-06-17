@@ -15,9 +15,10 @@
         fonts = [
           "NerdFontsSymbolsOnly"
           "0xProto"
-          # "JetBrainsMono"
-          # "FireCode"
+          # "FiraCode"
           # "Iosevka"
+          # "JetBrainsMono"
+          "SpaceMono"
         ];
       })
     ];
@@ -29,7 +30,7 @@
       defaultFonts = {
         serif = ["Noto Serif" "Noto Serif CJK JP" "Noto Color Emoji"];
         sansSerif = ["Noto Sans" "Noto Sans CJK JP" "Noto Color Emoji"];
-        monospace = ["0xProto Nerd Font" "Noto Color Emoji"];
+        monospace = ["SpaceMono Nerd Font" "Noto Color Emoji"];
         emoji = ["Noto Color Emoji"];
       };
     };

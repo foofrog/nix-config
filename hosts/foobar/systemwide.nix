@@ -1,23 +1,34 @@
 {pkgs, ...}: {
+  # HACK: Modularity via explicit importing
   imports = [
     ./filesystems.nix
-    ../../modules/applications/packages.nix
-    ../../modules/applications/programs/opengl.nix
-    ../../modules/applications/programs/steam.nix
-    ../../modules/applications/programs.nix
-    ../../modules/applications/services.nix
-    ../../modules/bootloader.nix
-    ../../modules/fonts.nix
-    ../../modules/graphics/amd.nix
-    ../../modules/graphics/nvidia.nix
-    ../../modules/internet.nix
-    ../../modules/kernel.nix
-    ../../modules/localization.nix
-    ../../modules/peripherals/audio.nix
-    ../../modules/peripherals/bluetooth.nix
-    ../../modules/peripherals/tablet.nix
-    ../../modules/power-management.nix
-    ../../modules/users/foo/user.nix
+
+    ../../modules/environment/packages
+
+    ../../modules/environment/programs
+    ../../modules/environment/programs/steam
+
+    ../../modules/environment/services
+    ../../modules/environment/services/power-profiles-daemon
+
+    ../../modules/environment/users/foo
+
+    ../../modules/foundations/bootloader/systemd-boot
+
+    ../../modules/foundations/graphics/api/opengl
+    ../../modules/foundations/graphics/processing-units/amd
+    ../../modules/foundations/graphics/processing-units/nvidia
+
+    ../../modules/foundations/i18n/fonts
+    ../../modules/foundations/i18n/l10n
+
+    ../../modules/foundations/internet
+
+    ../../modules/foundations/kernel
+
+    ../../modules/peripherals/audio
+    ../../modules/peripherals/bluetooth
+    # ../../modules/peripherals/tablet
   ];
 
   # Enable flakes for this configuration
@@ -26,7 +37,7 @@
   /*
   INFO:
   The value of `stateVersion` is the NixOS release version installed initially for this system
-  This is required for determining the default system state for that NixOS release
+  This is required for determining the default system state for the NixOS release
 
 
   NOTE:
