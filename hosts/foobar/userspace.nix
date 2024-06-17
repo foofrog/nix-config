@@ -1,7 +1,9 @@
 {...}: {
   imports = [
-    ../../modules/users/foo/home-depot/packages.nix
-    ../../modules/users/foo/home-depot/programs.nix
+    ../../modules/environment/users/foo/home-depot/packages
+    ../../modules/environment/users/foo/home-depot/programs
+    # XXX: `services` is empty
+    # ../../modules/environment/users/foo/home-depot/services
   ];
 
   programs.home-manager.enable = true;
