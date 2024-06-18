@@ -4,12 +4,8 @@
     ./filesystems.nix
 
     ../../modules/environment/packages
-
     ../../modules/environment/programs
-    ../../modules/environment/programs/steam
-
     ../../modules/environment/services
-    ../../modules/environment/services/power-profiles-daemon
 
     ../../modules/environment/users/foo
 
