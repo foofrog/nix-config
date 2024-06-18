@@ -1,5 +1,8 @@
 # TODO: Split `./programs.nix` into files under `./programs` directory for program-specific configurations
 {pkgs, ...}: {
+  imports = [
+    ./nushell.nix
+  ];
   gtk = {
     enable = true;
 
@@ -28,40 +31,15 @@
   };
 
   programs = {
-    fish = {
-      enable = true;
-
-      shellAliases = {
-        # Alias lengthy commands
-        ".." = "cd ..";
-        "..." = "cd ../..";
-        "...." = "cd ../../..";
-        "....." = "cd ../../../..";
-
-        "jctl" = "journalctl -p 3 -xb";
-
-        # Alias these coreutils with better alternatives
-        "ls" = "eza -al --color=always --group-directories-first";
-        "cat" = "bat --style header --style snip --style changes --style header";
-      };
-
-      interactiveShellInit = ''
-        set fish_greeting
-      '';
-    };
-
-    starship = {
-      enable = true;
-      enableFishIntegration = true;
-    };
-
     git = {
       enable = true;
+      
       userName = "Foo the Frog";
       userEmail = "mountfooji@proton.me";
 
       signing = {
         signByDefault = true;
+        
         key = "200257448AF7CE21";
       };
     };

@@ -12,7 +12,7 @@
       - Cereal Killer, Hackers (1995)
     */
     initialPassword = "GOD"; # to change this, use `passwd` command
-    shell = pkgs.fish;
+    shell = pkgs.nushell;
     uid = 1000;
 
     # Set the groups this user will be associated with
