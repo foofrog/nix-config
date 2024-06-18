@@ -27,7 +27,7 @@ Prefer `nix <commmand>` command rather than `nix-<something>` commmands if flake
     };
 
     niri = {
-      url = github:YaLTeR/niri;
+      url = "github:YaLTeR/niri";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
