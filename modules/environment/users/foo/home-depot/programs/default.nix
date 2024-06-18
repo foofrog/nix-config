@@ -33,13 +33,13 @@
   programs = {
     git = {
       enable = true;
-      
+
       userName = "Foo the Frog";
       userEmail = "mountfooji@proton.me";
 
       signing = {
         signByDefault = true;
-        
+
         key = "200257448AF7CE21";
       };
     };
