@@ -10,9 +10,16 @@ _: {
         "...." = "cd ../../..";
         "....." = "cd ../../../..";
 
-        "jctl" = "journalctl -p 3 -xb";
-
         "fuck" = "thefuck $'(history | last 1 | get command | get 0)'";
+        "jctl" = "journalctl -p 3 -xb";
+        "pls" = "sudo";
+
+        # Alias with better alternatives
+        "cat" = "bat --style header --style snip --style changes --style header";
+      };
+
+      environmentVariables = {
+        EDITOR = "hx";
       };
     };
 
