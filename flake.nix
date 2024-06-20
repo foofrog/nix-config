@@ -32,7 +32,7 @@ Prefer `nix <commmand>` command rather than `nix-<something>` commmands if flake
     };
   };
 
-  outputs = inputs @ {
+  outputs = {
     nixpkgs,
     home-manager,
     ...

@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{...}: {
   # HACK: Modularity via explicit importing
   imports = [
     ./filesystems.nix

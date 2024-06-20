@@ -1,4 +1,4 @@
-name: Format with alejandra
+name: Lint with statix
 on:
   push:
     paths:
@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  format:
+  statix:
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -18,20 +18,20 @@ jobs:
         uses: cachix/install-nix-action@master
         with:
           nix_path: nixpkgs=channel:nixos-unstable
-      - name: Check for formatting issues with alejandra
+      - name: Run statix check
         uses: workflow/nix-shell-action@main
         continue-on-error: true
         with:
-          packages: alejandra
+          packages: statix
           script: |
-            alejandra . -c
-      - name: Format code with alejandra
+            statix check
+      - name: Run statix fix
         uses: workflow/nix-shell-action@main
         with:
-          packages: alejandra
+          packages: statix
           script: |
-            alejandra .
+            statix fix
       - name: Push changes
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: "Format using Alejandra"
+          commit_message: "Lint using Statix"

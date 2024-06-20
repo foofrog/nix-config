@@ -1,4 +1,4 @@
-name: Format with alejandra
+name: Fix dead code with deadnix
 on:
   push:
     paths:
@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  format:
+  deadnix:
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -18,20 +18,20 @@ jobs:
         uses: cachix/install-nix-action@master
         with:
           nix_path: nixpkgs=channel:nixos-unstable
-      - name: Check for formatting issues with alejandra
+      - name: Run deadnix check
         uses: workflow/nix-shell-action@main
         continue-on-error: true
         with:
-          packages: alejandra
+          packages: deadnix
           script: |
-            alejandra . -c
-      - name: Format code with alejandra
+            deadnix
+      - name: Run deadnix fix
         uses: workflow/nix-shell-action@main
         with:
-          packages: alejandra
+          packages: deadnix
           script: |
-            alejandra .
+            deadnix -e
       - name: Push changes
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: "Format using Alejandra"
+          commit_message: "Fix dead code using deadnix"
