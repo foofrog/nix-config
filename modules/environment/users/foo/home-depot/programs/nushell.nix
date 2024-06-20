@@ -21,6 +21,13 @@ _: {
       environmentVariables = {
         EDITOR = "hx";
       };
+
+      extraEnv = ''
+        # Disable Nushell welcome message
+        $env.config = {
+          show_banner: false,
+        }
+      '';
     };
 
     starship = {
