@@ -9,12 +9,11 @@
 
     ../../modules/environment/users/foo
 
-    ../../modules/foundations/bootloader/systemd-boot
+    ../../modules/foundations/bootloader
 
-    ../../modules/foundations/graphics/api/opengl
-    ../../modules/foundations/graphics/processing-units/amd
-    ../../modules/foundations/graphics/processing-units/nvidia
-
+    ../../modules/foundations/graphics/api
+    ../../modules/foundations/graphics/processing-units
+    
     ../../modules/foundations/i18n/fonts
     ../../modules/foundations/i18n/l10n
 
