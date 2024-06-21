@@ -18,41 +18,37 @@
 ```txt
 .
 ├── flake.lock
-├── flake.nix
 ├── hosts
 │   └── foobar
-│       ├── filesystems.nix
-│       ├── systemwide.nix
-│       └── userspace.nix
 └── modules
-    ├── applications
-    │   ├── packages.nix
+    ├── environment
+    │   ├── packages
     │   ├── programs
-    │   │   ├── opengl.nix
-    │   │   └── steam.nix
-    │   ├── programs.nix
-    │   └── services.nix
-    ├── bootloader.nix
-    ├── fonts.nix
-    ├── graphics
-    │   ├── amd.nix
-    │   ├── nvidia.nix
-    │   └── opengl.nix
-    ├── internet.nix
-    ├── kernel.nix
-    ├── localization.nix
-    ├── peripherals
-    │   ├── audio.nix
-    │   ├── bluetooth.nix
-    │   └── tablet.nix
-    ├── power-management.nix
-    └── users
-        ├── foo
-        │   ├── home-depot
-        │   │   ├── packages.nix
-        │   │   └── programs.nix
-        │   └── user.nix
-        └── root.nix
+    │   ├── services
+    │   └── users
+    │       └── foo
+    │           └── home-depot
+    │               ├── packages
+    │               ├── programs
+    │               └── services
+    ├── foundations
+    │   ├── bootloader
+    │   │   └── systemd-boot
+    │   ├── graphics
+    │   │   ├── api
+    │   │   │   └── opengl
+    │   │   └── processing-units
+    │   │       ├── amd
+    │   │       └── nvidia
+    │   ├── i18n
+    │   │   ├── fonts
+    │   │   └── l10n
+    │   ├── internet
+    │   └── kernel
+    └── peripherals
+        ├── audio
+        ├── bluetooth
+        └── tablet
 ```
 
 Currently, all OS and Home Manager modules are imported within `/hosts/foobar/systemwide.nix` and `/hosts/foobar/userspace.nix` explicitly. These two files are ideally intended to be used as module switches or toggles if you will, for `/modules`. `/modules/users/foo/home-depot/` directory serves as a deposit for the user's home configurations managed by Home Manager.
