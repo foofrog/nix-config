@@ -17,7 +17,7 @@
 
 ```txt
 .
-├── flake.lock
+├── flake.nix
 ├── hosts
 │   └── foobar
 └── modules
