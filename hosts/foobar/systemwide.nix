@@ -11,8 +11,7 @@
 
     ../../modules/foundations/bootloader
 
-    ../../modules/foundations/graphics/api
-    ../../modules/foundations/graphics/processing-units
+    ../../modules/foundations/graphics
 
     ../../modules/foundations/i18n/fonts
     ../../modules/foundations/i18n/l10n
