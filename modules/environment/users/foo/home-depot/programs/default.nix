@@ -2,6 +2,7 @@
 {pkgs, ...}: {
   imports = [
     ./nushell.nix
+    ./xdg.nix
   ];
   gtk = {
     enable = true;
