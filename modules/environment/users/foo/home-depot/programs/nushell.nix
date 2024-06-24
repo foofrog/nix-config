@@ -34,6 +34,46 @@ _: {
       enable = true;
 
       enableNushellIntegration = true;
+
+      settings = {
+        sudo.disabled = true;
+
+        character = {
+          success_symbol = " [╰─](bold cyan)[λ](bold green)";
+          error_symbol = " [╰─](bold cyan)[Χ](bold red)";
+        };
+
+        username = {
+          format = " [╭─$user]($style)@";
+          show_always = true;
+          style_root = "bold red";
+          style_user = "bold cyan";
+        };
+
+        hostname = {
+          disabled = false;
+          format = "[$hostname]($style) in ";
+          ssh_only = false;
+          style = "bold blue";
+          trim_at = "-";
+        };
+
+        directory = {
+          style = "purple";
+          truncate_to_repo = true;
+          truncation_length = 0;
+          truncation_symbol = "repo: ";
+        };
+
+        git_commit.tag_symbol = " tag ";
+        git_status = {
+          ahead = ">";
+          behind = "<";
+          diverged = "<>";
+          renamed = "r";
+          deleted = "x";
+        };
+      };
     };
 
     # carapace = {
