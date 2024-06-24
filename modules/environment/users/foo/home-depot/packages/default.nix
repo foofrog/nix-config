@@ -12,6 +12,8 @@
 
     firefox
 
+    qbittorrent
+
     # Diagnostic
     macchina
     bottom
@@ -24,6 +26,8 @@
     bzip2
     pigz
     rar
+
+    ouch # Command-line utility for easily compressing and decompressing files and directories
 
     # UI/UX
     niri
