@@ -1,6 +1,7 @@
 # TODO: Split `./programs.nix` into files under `./programs` directory for program-specific configurations
 {pkgs, ...}: {
   imports = [
+    ./helix.nix
     ./nushell.nix
     ./xdg.nix
   ];

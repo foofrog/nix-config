@@ -18,9 +18,9 @@ _: {
         "cat" = "bat --style header --style snip --style changes --style header";
       };
 
-      environmentVariables = {
-        EDITOR = "hx";
-      };
+      # environmentVariables = {
+      #   EDITOR = "hx"; # NOTE: Not necessary as it is already set in `./helix.nix` file
+      # };
 
       extraEnv = ''
         # Disable Nushell welcome message
@@ -32,7 +32,7 @@ _: {
 
     starship = {
       enable = true;
-      # enableFishIntegration = false;
+
       enableNushellIntegration = true;
     };
 
