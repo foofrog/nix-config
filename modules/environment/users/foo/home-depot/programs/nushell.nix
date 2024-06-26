@@ -23,9 +23,8 @@ _: {
       # };
 
       extraEnv = ''
-        # Disable Nushell welcome message
         $env.config = {
-          show_banner: false,
+          show_banner: false, # Disable welcome message
         }
       '';
     };
@@ -73,6 +72,8 @@ _: {
           renamed = "r";
           deleted = "x";
         };
+
+        battery.disabled = true;
       };
     };
 

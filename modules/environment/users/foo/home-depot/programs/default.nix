@@ -3,6 +3,7 @@
   imports = [
     ./helix.nix
     ./nushell.nix
+    ./kitty.nix
     ./xdg.nix
   ];
   gtk = {
