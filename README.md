@@ -62,3 +62,9 @@ With that said, I'd like to thank:
 - [Tanvir](https://github.com/TanvirOnGH), his invaluable guidance enabled me to make the hop to Nix & NixOS (from Arch, btw) and to come up with an initial setup. [His own Nix/NixOS ](https://github.com/TanvirOnGH/nixos-config) configuration has been incredibly helpful in creating mine.
 - [Krey](https://github.com/Kreyren/nixos-config), [Fufezan](https://github.com/fufexan/dotfiles), and [Ryan Yin](https://github.com/ryan4yin/nix-config) for their repositories, which were indispensable sources of learning and reference.
 - [NixOS Discourse](https://discourse.nixos.org/), official NixOS community forum that helped me debug hours of pure pain.
+
+## The holy trinity of Nix
+
+<div>
+  <img src="trinity.png" alt="Nix trinity">
+</div>
