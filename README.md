@@ -33,13 +33,7 @@
     │               └── services
     ├── foundations
     │   ├── bootloader
-    │   │   └── systemd-boot
     │   ├── graphics
-    │   │   ├── api
-    │   │   │   └── opengl
-    │   │   └── processing-units
-    │   │       ├── amd
-    │   │       └── nvidia
     │   ├── i18n
     │   │   ├── fonts
     │   │   └── l10n
@@ -51,7 +45,7 @@
         └── tablet
 ```
 
-Currently, all OS and Home Manager modules are imported within `/hosts/foobar/systemwide.nix` and `/hosts/foobar/userspace.nix` explicitly. These two files are ideally intended to be used as module switches or toggles if you will, for `/modules`. `/modules/users/foo/home-depot/` directory serves as a deposit for the user's home configurations managed by Home Manager.
+Currently, all OS and Home Manager modules are imported within `/hosts/foobar/systemwide.nix` and `/hosts/foobar/userspace.nix` explicitly. These two files are ideally intended to be used as module switches or toggles if you will, for `/modules`. `/modules/users/foo/home-depot` directory serves as a deposit for the user's home configurations managed by Home Manager.
 
 ## Acknowledgements
 
