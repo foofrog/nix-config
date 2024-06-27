@@ -1,19 +1,22 @@
 /*
 INFO:
-`flake.lock` file in the current directory captures the version of dependencies and locks them
-This is important for reproducibility in deploying Nix installations throughout multiple hosts
+`./flake.lock` file captures dependency versions and locks them
+It's important for consistent deployment of Nix across multiple hosts
 
-To learn about flakes and flake schema, refer to https://nixos.wiki/wiki/Flakes
+https://nixos.wiki/wiki/Flakes
 
 NOTE:
-Prefer `nix <commmand>` command rather than `nix-<something>` commmands if flake setup exists
+Prefer `nix <commmand>` commands rather than `nix-<something>` commmands if flake setup exists
 */
 {
-  description = "Foo the Frog's NixOS and Home Manager configuration flake";
+  description = "Foo the Frog's Nix flake";
 
   # Specify dependencies in `inputs` attribute
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+
+    # INFO:  Nix flake for "too much bleeding-edge" and unreleased packages
+    nyxpkgs.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
 
     home-manager = {
       /*
@@ -35,6 +38,7 @@ Prefer `nix <commmand>` command rather than `nix-<something>` commmands if flake
   outputs = {
     nixpkgs,
     home-manager,
+    nyxpkgs,
     ...
   }: {
     nixosConfigurations = {
@@ -42,6 +46,9 @@ Prefer `nix <commmand>` command rather than `nix-<something>` commmands if flake
         system = "x86_64-linux";
         modules = [
           ./hosts/foobar/systemwide.nix
+
+          # Deploy default Chaotic-Nyx module
+          nyxpkgs.nixosModules.default
 
           /*
           INFO:
