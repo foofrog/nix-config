@@ -3,7 +3,7 @@
   pkgs,
   ...
 }: {
-  # Load Nvidia driver (works for both X and Wayland)
+  # Load Nvidia driver for Xorg and Wayland
   services.xserver.videoDrivers = ["nvidia"];
 
   boot = {
@@ -12,17 +12,27 @@
   };
 
   hardware.nvidia = {
-    package = config.boot.kernelPackages.nvidiaPackages.latest;
-    modesetting.enable = true;
+    package = config.boot.kernelPackages.nvidiaPackages.beta;
+    
+    modesetting.enable = true; # Required
 
     powerManagement = {
-      # NOTE: Currently experimental
+      /*
+      NOTE:
+      Experimental and can cause sleep/suspend to fail
+      
+      Enable this if you have graphical corruption issues or application crashes after waking up from sleep
+      This fixes it by saving the entire VRAM memory to `/tmp/` instead of just the bare essentials
+      */
       enable = false;
-      finegrained = false;
-    };
 
-    nvidiaSettings = true; # NOTE: It enables the `nvidia-settings` command
-    open = false;
+      # NOTE: Experimental and only works on modern Nvidia GPUs (Turing or newer)
+      finegrained = false; # Turns off GPU when not in use
+    };
+    
+    # Enable the Nvidia settings menu
+    nvidiaSettings = true; # Accessible via `nvidia-settings` command
+    open = true;
     nvidiaPersistenced = true;
 
     # Enable NVIDIA Optimus (Offload)
