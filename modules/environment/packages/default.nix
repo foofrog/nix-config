@@ -8,7 +8,6 @@
     # TODO: Add a small comment description for each package in the list
     macchina
     helix
-    brillo
 
     strace
     ltrace
@@ -22,6 +21,8 @@
     btop
     nmon
     sysbench
+
+    brightnessctl
 
     lm_sensors # for `sensors` command
     ethtool
