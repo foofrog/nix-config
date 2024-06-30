@@ -8,6 +8,8 @@
     xplr
     zoxide
 
+    todo
+
     firefox
 
     qbittorrent
